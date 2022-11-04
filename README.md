@@ -18,6 +18,15 @@ Automatic jar managing program for remote cloud server users
 
 * [gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0](https://gcc.gnu.org) - 프로젝트에 사용된 컴파일러
 
+## Command
+
+```text
+-h : help 명령어, 사용할 수 있는 명령어들을 확인한다. 
+-v : version 확인
+-r : jar 등록
+-init : conf 파일 생성 및 초기 설정
+```
+
 ## Contributing
 
 본 프로젝트는 오픈소스 프로젝트이며 여러분들의 많은 Pull Request를 기다리고 있습니다

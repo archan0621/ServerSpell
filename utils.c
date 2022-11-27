@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char* DeleteChar(char *s, char ch)
+char* DeleteChar(char s[], char ch)
 {
 	char* str = (char*)malloc(sizeof(s));
 	int i, k = 0;

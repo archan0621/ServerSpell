@@ -24,7 +24,9 @@ Automatic jar managing program for remote cloud server users
 -h : help 명령어, 사용할 수 있는 명령어들을 확인한다. 
 -v : version 확인
 -r : jar 등록
--init : conf 파일 생성 및 초기 설정
+--start : jar 서버 시작
+--log : jar 서버 로그 확인
+--stop : jar 서버 중지
 ```
 
 ## Contributing

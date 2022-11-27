@@ -11,7 +11,8 @@ Automatic jar managing program for remote cloud server users
 아래의 명령어로 프로젝트를 빌드할 수 있습니다.
 
 ```
-(make 파일 만들 예정)
+make : 빌드
+make clean : 빌드 클린
 ```
 
 ## Built With

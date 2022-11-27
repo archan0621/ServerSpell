@@ -1,0 +1,6 @@
+*.conf
+nohup.out
+ServerSpell
+*.o
+*.json
+./ServerSpell

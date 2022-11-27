@@ -32,7 +32,7 @@ int sort(int param, char *option, char *soption){
 
 	if(strncmp(option, "-h",sizeof(option))==0){
 		printf("ServerSpell v1.0.0\n\nCommands\n\n-h : show command option information\n\n-v : show ServerSpells Version\n\n-r [jarName] : Register jar to run\n\n");
-		printf("--start : Run jar server\n\n");
+		printf("--start : Run jar server\n\n--log : Show log for jar server\n\n--stop : Stop jar Server\n\n");
 	}else if(strncmp(option,"-v",sizeof(option))==0){
 		printf("\nServerSpell Version 1.0.0 Develop by Archan All right Reversed\n\n");
 	}else if(strncmp(option,"-r",sizeof(option))==0){

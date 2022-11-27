@@ -50,6 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-ServerSpell.conf
+*.conf
 nohup.out
-ServerSpell
+./ServerSpell

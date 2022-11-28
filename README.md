@@ -38,9 +38,10 @@ make clean : 빌드 클린
 
 ## Authors
 
-* **JJongHa** - *MainDeveloper* - [JJONG](https://github.com/archan0621?tab=repositories)
+* **JJongHa** - *MainDeveloper* - [JJONG](https://github.com/archan0621)
+* **BackHoe312** - *Contributor* - [donghoonlee](https://github.com/BackHoe312)
 
-또한 이 프로젝트에 기여해주신 [Contributors](https://github.com/archan0621/Krurllu/contributors) 목록입니다
+또한 이 프로젝트에 기여해주신 [Contributors](https://github.com/archan0621/ServerSpell/contributors) 목록입니다
 
 ## License
 

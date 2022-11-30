@@ -4,3 +4,4 @@ ServerSpell
 *.o
 *.json
 ./ServerSpell
+*.jar

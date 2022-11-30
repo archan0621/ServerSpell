@@ -13,6 +13,7 @@ int create_config(char* path);
 int registerJar(char* path, char* jar);
 int startJar();
 int showLog();
+int server_status();
 int stopJar();
 
 int main(int argc, char* argv[]){
@@ -32,7 +33,7 @@ int sort(int param, char *option, char *soption){
 
 	if(strncmp(option, "-h",sizeof(option))==0){
 		printf("ServerSpell v1.0.0\n\nCommands\n\n-h : show command option information\n\n-v : show ServerSpells Version\n\n-r [jarName] : Register jar to run\n\n");
-		printf("--start : Run jar server\n\n--log : Show log for jar server\n\n--stop : Stop jar Server\n\n");
+		printf("--start : Run jar server\n\n--log : Show log for jar server\n\n--status: Check jar server status\n\n--stop : Stop jar Server\n\n");
 	}else if(strncmp(option,"-v",sizeof(option))==0){
 		printf("\nServerSpell Version 1.0.0 Develop by Archan All right Reversed\n\n");
 	}else if(strncmp(option,"-r",sizeof(option))==0){
@@ -45,6 +46,8 @@ int sort(int param, char *option, char *soption){
 		startJar();
 	}else if(strncmp(option,"--log",sizeof(option))==0){
 		showLog();
+	} else if(strncmp(option, "--status",sizeof(option))==0) {
+		server_status();
 	}else if(strncmp(option,"--stop",sizeof(option))==0){
 		stopJar();
 	}else{
@@ -103,6 +106,44 @@ int startJar(){
 int showLog(){
 	system("tail -f nohup.out");
 	return 0;
+}
+
+int server_status() {
+	char command[256];
+	char line[256];
+	char pid[256];
+	FILE* stream = NULL;
+	FILE* shell = NULL;
+
+	stream = fopen("ServerSpell.conf", "r");
+	if (stream == NULL) {
+		printf("Error: Can't open file Please register jar file\n");
+		goto err;
+	}
+
+	printf("PID\t\tName\t\t\tStatus\n");
+	printf("---------------------------------------------------\n");
+	if(fgets(line, sizeof(line), stream) != NULL) {
+		line[strlen(line) - 1] = '\0';
+		//find process pid with jar name
+		snprintf(command, sizeof(command), "ps -ef | grep %s | grep -v grep | awk '{print $2}'", line);
+		shell = popen(command, "r");
+		if (shell == NULL) {
+			printf("[%s/%d] Error: status command error\n", __func__, __LINE__);
+		}
+
+		fgets(pid, sizeof(pid), shell);
+		if (atoi(pid) == 0) {
+			printf("\t\t(%s)\t\tStop...\n", line);
+		} else {
+			pid[strlen(pid) - 1] = '\0';
+			printf("(%s)\t\t(%s)\t\tRunning...\n", pid, line);
+		}
+	}
+
+	return 0;
+err:
+	return -1;
 }
 
 int stopJar(){

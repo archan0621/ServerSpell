@@ -26,6 +26,7 @@ make clean : 빌드 클린
 -v : version 확인
 -r : jar 등록
 --start : jar 서버 시작
+--status : jar 상태 
 --log : jar 서버 로그 확인
 --stop : jar 서버 중지
 ```

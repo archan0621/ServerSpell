@@ -37,6 +37,8 @@ make clean : 빌드 클린
 
 조만간 Contributing Document를 작성하여 오픈소스에 참여하시는분들의 참여 방법에 대하여 정리하겠습니다
 
+PR을 올리시게되면 등록한 Github Action CI가 작동하게 됩니다.
+
 ## Authors
 
 * **JJongHa** - *MainDeveloper* - [JJONG](https://github.com/archan0621)
